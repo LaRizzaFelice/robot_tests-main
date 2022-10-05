@@ -18,7 +18,7 @@ Login Without Email Address
     Element text should be  css:ul[class='woocommerce-error']  Error: Please provide a valid email address.
 
 Register without password
-    Click Element  //a[normalize-space()='My Account']
+     Click Element  //a[normalize-space()='My Account']
      Sleep  1s
      Input Text  css:#reg_email  larizza.felice@gmail.com
      Sleep  1s
