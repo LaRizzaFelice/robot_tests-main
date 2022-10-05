@@ -8,7 +8,14 @@ Suite Teardown  Close browser
 
 *** Test Cases ***
 
-De zoekbalk helpt om een film op te zoeken
-    Input Text  css:#mui-54694  fat
-    sleep  1s
-    click element  css:#mui-48366-option-0
+Een profiel heeft een foto
+    Click Element  css:div[class='css-1idhddb'] div:nth-child(2)
+    Sleep  1s
+    Click Element  css:#SignInButton
+    Sleep  1s
+    Input Text  css:#SignInEmail  larizza.felice@gmail.com
+    Sleep  1s
+    Input Text  css:#SignInPassword  Giulia10?
+    Sleep  1s
+    Click Element  css:#SignInButtonComplete
+
