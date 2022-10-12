@@ -2,20 +2,23 @@
 Resource            ../pageObjects/basePage.robot
 
 Suite Setup  Open My Website
+Suite Setup  LOGIN
 Suite Teardown  Close browser
 
 *** Variables ***
 
 *** Test Cases ***
 
-Een profiel heeft een foto
-    Click Element  css:div[class='css-1idhddb'] div:nth-child(2)
+Inloggen
+
+    Click Element  xpath://*[@id="SignInButton"]
     Sleep  1s
-    Click Element  css:#SignInButton
+    Input Text  xpath://*[@id="SignInEmail"]  larizza.felice@gmail.com
     Sleep  1s
-    Input Text  css:#SignInEmail  larizza.felice@gmail.com
+    Input Text  xpath://*[@id="SignInPassword"]  Giulia10?
     Sleep  1s
-    Input Text  css:#SignInPassword  Giulia10?
-    Sleep  1s
-    Click Element  css:#SignInButtonComplete
+    Click Element  xpath://*[@id="SignInButtonComplete"]
+
+
+
 

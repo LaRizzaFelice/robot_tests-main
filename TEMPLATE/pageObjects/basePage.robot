@@ -5,3 +5,4 @@ Resource  ../helpers/browser.robot
 Open My Website
     [Arguments]  ${url}=${BASE_URL}  ${browser}=${BROWSER}
     Open Browser  ${url}  ${browser}
+    Sleep   10s
