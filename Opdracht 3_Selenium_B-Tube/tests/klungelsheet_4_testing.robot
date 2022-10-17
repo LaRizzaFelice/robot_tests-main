@@ -28,8 +28,7 @@ ALTIJD EERST GEWOON INLOGGEN
     Sleep    2s
     Click Element    //form/button[@class='css-1e9674f']
     Sleep    2s
-    should co    Value must be greater than or equal to 1.
-    Sleep    2s
+    Select Frame    locator       
 
 
 
