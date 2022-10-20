@@ -7,6 +7,8 @@ Library    XML
 
 *** Variables ***
 
+
+
 *** Test Cases ***
 
 ALTIJD EERST GEWOON INLOGGEN
@@ -19,16 +21,13 @@ ALTIJD EERST GEWOON INLOGGEN
      Click Element  xpath://*[@id="SignInButtonComplete"]
      sleep  2s
 
-5.Negatieve credits kunnen niet aangekocht worden
-    Click Element    //div[@class='css-1uhaiyw']/a[2]/button
-    Sleep    2s
-    Click Element    //div[@class='css-kcntxh']/button[@class='css-1e9674f']
-    Sleep    2s
-    Input Text    //form/input[@class='css-1ml9hd4']    -5
-    Sleep    2s
-    Click Element    //form/button[@class='css-1e9674f']
-    Sleep    2s
-    Select Frame    locator       
+6.Een profiel heeft een avatar
+         Sleep    5s
+         click Element   //*[@id="OrdersPageButton"]
+         Sleep    5s
+         Wait Until Element Is Visible    //div[@class='css-kcntxh']/img
+
+
 
 
 

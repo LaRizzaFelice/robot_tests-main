@@ -5,6 +5,8 @@ Suite Setup  Open My Website
 Suite Teardown  Close browser
 
 *** Variables ***
+${ELEMENT_EEN}=  xpath://*[@id="SignInButtonComplete"]
+
 
 *** Test Cases ***
 8.Foutief inloggen geef een feedback voor foute username
@@ -51,7 +53,7 @@ Suite Teardown  Close browser
 
 6.Een profiel heeft een avatar
     Sleep    2s
-    click Element   xpath://a[@href='#/profile']//button[@id='OrdersPageButton']
+    click Element   //*[@id="OrdersPageButton"]
     Sleep    2s
     Wait Until Element Is Visible    //div[@class='css-kcntxh']/img
 
@@ -60,20 +62,30 @@ Suite Teardown  Close browser
     Sleep    2s
     Click Element    //div[@class='css-kcntxh']/button[@class='css-1e9674f']
     Sleep    2s
+    ${CREDITS}  Get Value    //p[normalize-space()='41']
     Input Text    //form/input[@class='css-1ml9hd4']    -5
     Sleep    2s
     Click Element    //form/button[@class='css-1e9674f']
     Sleep    2s
-    Element Text Should Be    //div[@class='css-kcntxh']/p[6]    0
-    Sleep    2s
+    ${NEW CREDITS}  Get Value    //p[normalize-space()='41']
+    Should Be Equal    ${CREDITS}     ${NEW CREDITS}
 
 
 3.Na het huren van een film, komt het in de lijst met gehuurde films
-    Click Element    //div[@class='css-9enwqs']/a/picture/img
+    Click Element    xpath://div[@id='Action Movies']//img[@id='624779']
+    Sleep  2s
+    Click Element    xpath://button[@id='RentMovieButton']
+    Sleep  2s
+    Click Button    //div[@class='css-1uhaiyw']//button[@class='css-e6lcyw']
+    Sleep  2s
+    Wait Until Element Is Visible  ${ELEMENT_THING}
     Sleep    2s
-    Click Element    //div[@class='css-ptqyzx']/img[2]
-    Sleep    2s
-    Click Element    //button[@id='RentMovieButton']
+    Click Element  ${ELEMENT_THING}
+    Sleep  2s
+    Wait Until Element Is Visible  ${MYMOVIES}
+    Click element    ${MYMOVIES}
+    Sleep  2s
+    Page Should Contain    VFW
 
 
 
