@@ -11,7 +11,14 @@ Library    SeleniumLibrary
 
 
 *** Test Cases ***
-
+6.Een profiel heeft een avatar
+     Go To Signin Page
+     Location Should Be    ${LOGIN_URL}
+     Log In With Account
+     sleep  2s
+     Go To Profile
+     Sleep    2s
+     Wait Until Element Is Visible    //img[@class='css-1wu7nrr']
 
 
 

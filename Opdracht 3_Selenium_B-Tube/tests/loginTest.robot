@@ -17,7 +17,7 @@ ${lastname} =   La Rizza
 *** Test Cases ***
 2.Na het inloggen, kom je op de juiste pagina terecht
     Go To Signin Page
-    Location Should Be    https://brightshopapp.herokuapp.com/#/login
+    Location Should Be    ${LOGIN_URL}
     Log In With Account
     sleep  5s
     Wait Until Element Is Visible    ${GO_2_PROFILE}
