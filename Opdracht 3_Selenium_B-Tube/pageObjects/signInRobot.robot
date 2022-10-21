@@ -6,6 +6,7 @@ Resource  homePage.robot
 ${EMAIL_LOGIN_TXT}=       xpath://input[@id='SignInEmail']
 ${PASSWORD_LOGIN_TXT}=    xpath://*[@id="SignInPassword"]
 ${LOGIN_BTN}=             xpath://*[@id="SignInButtonComplete"]
+${LOGIN_URL}=             https://brightshopapp.herokuapp.com/#/login
 
 ${emailadress}=           felice.larizza@gmail.com
 ${password}=              Bunderken5
