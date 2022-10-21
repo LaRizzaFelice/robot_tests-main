@@ -3,33 +3,25 @@ Resource  basePage.robot
 
 *** Variables ***
 
-${SIGNIN_LNK}=       xpath://button[@id='SignInButton']
-${ELEMENT_THING}=    xpath://div[@class='css-1idhddb']//div[1]
-${PROFILE_LINK}=     xpath://*[@id="nav"]/div[4]/a[2]
+${SIGNINBUTTON}=       xpath://button[@id='SignInButton']
+${GO_2_PROFILE}=     xpath://a[@href='#/profile']//button[@id='OrdersPageButton']
 
 *** Keywords ***
 
 Go To Signin Page
-    Sleep    5s
-    Wait Until Element Is Visible  ${ELEMENT_THING}
-    Sleep    5s
-    Click Element  ${ELEMENT_THING}
-    Sleep    5s
-    Wait Until Element Is Visible  ${SIGNIN_LNK}
-    Sleep    5s
-    Click Element  ${SIGNIN_LNK}
-    Sleep    5s
+    Sleep    2s
+    Wait Until Element Is Visible  ${SIGNINBUTTON}
+    Sleep    2s
+    Click Element  ${SIGNINBUTTON}
+    Sleep    2s
 
 Go To Profile
-    Sleep    5s
-    Wait Until Element Is Visible    ${ELEMENT_THING}
-    Sleep    5s
-    Click Element    ${ELEMENT_THING}
-    Sleep    5s
-    Wait Until Element Is Visible    ${PROFILE_LINK}
-    Sleep    5s
-    Click Element    ${PROFILE_LINK}
-    Sleep    5s
+    Sleep    2s
+    Wait Until Element Is Visible    ${GO_2_PROFILE}
+    Sleep    2s
+    Click Element    ${GO_2_PROFILE}
+    Sleep    2s
+
 
 
 

@@ -7,8 +7,8 @@ Suite Teardown  Close browser
 Library    SeleniumLibrary
 
 *** Variables ***
-${first_name_element}=          xpath://*[@id="SignIn"]/div[3]/div/p[2]
-${last_name_element}=           xpath://*[@id="SignIn"]/div[3]/p[2]
+${first_name_element}=          //*[@id="SignIn"]/div[3]/div/p[2]
+${last_name_element}=           //div[@class='css-kcntxh']/p[@class='css-cpr2ex'][1]
 
 ${name} =   Felice
 ${lastname} =   La Rizza
@@ -16,9 +16,11 @@ ${lastname} =   La Rizza
 *** Test Cases ***
 login
     Go To Signin Page
+    Location Should Be    https://brightshopapp.herokuapp.com/#/login
     Log In With Account
-    Location Should Be    https://brightshopapp.herokuapp.com/#/login name correct
+
 
 Go To Profile
+    Go To Profile
     Element Should Contain    locator=${first_name_element}    expected=${name}
     Element Should Contain    locator=${last_name_element}    expected=${lastname}
