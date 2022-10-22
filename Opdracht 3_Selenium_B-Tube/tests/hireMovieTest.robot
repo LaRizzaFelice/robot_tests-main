@@ -49,7 +49,25 @@ ${CLOSE_RENTWINDOW_BUTTON}=  //*[@id="CloseModal"]
     Sleep  2s
     Page Should Contain     Peninsula
 
-4.	Na het huren van een film, dalen de credits met de juiste waarde
+4.Na het huren van een film, dalen de credits met de juiste waarde
+     Go To Signin Page
+     Location Should Be    ${LOGIN_URL}
+     Log In With Account
+     Go To Profile
+     Sleep    5s
+     ${CREDIT}=  Get Text    xpath://*[@id="SignIn"]/div[3]/p[6]
+     ${CREDIT}=     Convert To Integer    ${CREDIT}
+     Go To homePage
+     Sleep  5s
+     Click Element    xpath://div[@id='Romance Movies']//img[@id='643882']
+     Sleep  2s
+     Click Element    xpath://button[@id='RentMovieButton']
+     Sleep  2s
+     Go To Profile
+     Sleep  5s
+     ${CREDIT_new}=  Get Text    xpath://*[@id="SignIn"]/div[3]/p[6]
+     ${CREDIT_new}=     Convert To Integer    ${CREDIT_new}
+     Should Not Be Equal    ${CREDIT}  ${CREDIT_new}
 
 
 

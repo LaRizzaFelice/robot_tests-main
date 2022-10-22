@@ -5,9 +5,13 @@ Resource  basePage.robot
 
 ${SIGNINBUTTON}=        xpath://button[@id='SignInButton']
 ${GO_2_PROFILE}=        xpath://a[@href='#/profile']//button[@id='OrdersPageButton']
-${HOMEPAGE_BUTTON}=     xpath//*[@id="Logo"]
+${HOMEPAGE_BUTTON}=     xpath://img[@id='Logo']
 
 *** Keywords ***
+Go To Homepage
+    Sleep    5
+    Click Element  ${HOMEPAGE_BUTTON}
+
 
 Go To Signin Page
     Sleep    2s
