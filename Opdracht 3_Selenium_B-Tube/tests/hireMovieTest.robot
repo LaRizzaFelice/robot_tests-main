@@ -9,45 +9,14 @@ Suite Teardown  Close browser
 Library    SeleniumLibrary
 
 *** Variables ***
-${BUY_BUTTON}=              xpath://button[@class='css-1e9674f']
-${INPUT_CREDITS}=           xpath://input[@placeholder='5']
+${GET_VALUE_CREDITS}=                           //*[@id="SignIn"]/div[3]/p[6]
 
-${NEG_CREDIT}=              -10
-${MYMOVIES}=                //a[@href='#/orders']//button[@id='OrdersPageButton']
-${ELEMENT}=                 //div[@class='css-1idhddb']//div[1]
-${SELECTED_MOVIE}=          //div[@id='Action Movies']//img[@id='581392']
-${RENTBUTTON}=              //button[@id='RentMovieButton']
-${CLOSE_RENTWINDOW_BUTTON}=  //*[@id="CloseModal"]
+${SELECTED_MOVIE_2CHANGE_4_TEST}=               //div[@id='Action Movies']//img[@id='581392']
+
+${RENTBUTTON}=                                  //button[@id='RentMovieButton']
+${CLOSE_RENTWINDOW_BUTTON}=                     //*[@id="CloseModal"]
 
 *** Test Cases ***
-5.Negatieve credits kunnen niet aangekocht worden
-    Go To Signin Page
-    Location Should Be    ${LOGIN_URL}
-    Log In With Account
-    Go to Add Credits page
-    Sleep    2s
-    Click Element    ${BUY_BUTTON}
-    Sleep  5s
-    Input Text    ${INPUT_CREDITS}     ${NEG_CREDIT}
-    Sleep    2s
-    Click Element    ${BUY_BUTTON}
-    Sleep    5s
-
-3.Na het huren van een film, komt het in de lijst met gehuurde films
-    Go To Signin Page
-    Location Should Be    ${LOGIN_URL}
-    Log In With Account
-    Sleep  2s
-    Click Element    ${SELECTED_MOVIE}
-    Sleep  2s
-    Click Element    ${RENTBUTTON}
-    Sleep  2s
-    Click Button    ${CLOSE_RENTWINDOW_BUTTON}
-    Sleep  2s
-    Wait Until Element Is Visible  ${MYMOVIES}
-    Click element    ${MYMOVIES}
-    Sleep  2s
-    Page Should Contain     Peninsula
 
 4.Na het huren van een film, dalen de credits met de juiste waarde
      Go To Signin Page
@@ -55,17 +24,17 @@ ${CLOSE_RENTWINDOW_BUTTON}=  //*[@id="CloseModal"]
      Log In With Account
      Go To Profile
      Sleep    5s
-     ${CREDIT}=  Get Text    xpath://*[@id="SignIn"]/div[3]/p[6]
+     ${CREDIT}=  Get Text    ${GET_VALUE_CREDITS}
      ${CREDIT}=     Convert To Integer    ${CREDIT}
      Go To homePage
      Sleep  5s
-     Click Element    xpath://div[@id='Romance Movies']//img[@id='643882']
+     Click Element    ${SELECTED_MOVIE_2CHANGE_4_TEST}
      Sleep  2s
-     Click Element    xpath://button[@id='RentMovieButton']
+     Click Element    ${RENTBUTTON}
      Sleep  2s
      Go To Profile
      Sleep  5s
-     ${CREDIT_new}=  Get Text    xpath://*[@id="SignIn"]/div[3]/p[6]
+     ${CREDIT_new}=  Get Text    ${GET_VALUE_CREDITS}
      ${CREDIT_new}=     Convert To Integer    ${CREDIT_new}
      Should Not Be Equal    ${CREDIT}  ${CREDIT_new}
 
