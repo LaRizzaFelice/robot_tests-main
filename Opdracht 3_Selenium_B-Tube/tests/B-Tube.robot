@@ -68,7 +68,7 @@ ${ELEMENT_EEN}=  xpath://*[@id="SignInButtonComplete"]
     Click Element    //form/button[@class='css-1e9674f']
     Sleep    2s
     ${NEW CREDITS}  Get Value    //p[normalize-space()='41']
-    Should Be Equal    ${CREDITS}     ${NEW CREDITS}
+    Should Be Equal  ${CREDITS}     ${NEW CREDITS}
 
 
 3.Na het huren van een film, komt het in de lijst met gehuurde films

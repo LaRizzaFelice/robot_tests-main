@@ -3,8 +3,9 @@ Resource  basePage.robot
 
 *** Variables ***
 
-${SIGNINBUTTON}=       xpath://button[@id='SignInButton']
-${GO_2_PROFILE}=     xpath://a[@href='#/profile']//button[@id='OrdersPageButton']
+${SIGNINBUTTON}=        xpath://button[@id='SignInButton']
+${GO_2_PROFILE}=        xpath://a[@href='#/profile']//button[@id='OrdersPageButton']
+${HOMEPAGE_BUTTON}=     xpath//*[@id="Logo"]
 
 *** Keywords ***
 
@@ -21,6 +22,9 @@ Go To Profile
     Sleep    2s
     Click Element    ${GO_2_PROFILE}
     Sleep    2s
+
+
+
 
 
 

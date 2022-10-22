@@ -14,8 +14,8 @@ ${error_message} =              //div[@class='css-1y9e552']/code
 
 ${name} =                       Felice
 ${lastname} =                   La Rizza
-${message not registered}=      This email has not been registered.
-${message password incorrect}=  Email or password incorrect.
+${messageNotRegistered}=      This email has not been registered.
+${messagePasswordIncorrect}=  Email or password incorrect.
 
 
 
@@ -24,10 +24,10 @@ ${message password incorrect}=  Email or password incorrect.
     Go To Signin Page
     Location Should Be    ${LOGIN_URL}
     Log In With Bad Account
-    Element Text Should Be    ${error_message}    ${message not registered}
+    Element Text Should Be    ${error_message}    ${messageNotRegistered}
 
 9.Foutief inloggen geef een feedback voor foute paswoord
     Go To Signin Page
     Location Should Be    ${LOGIN_URL}
     Login With Bad Password
-    Element Text Should Be    ${error_message}    ${message password incorrect}
+    Element Text Should Be    ${error_message}    ${messagePasswordIncorrect}

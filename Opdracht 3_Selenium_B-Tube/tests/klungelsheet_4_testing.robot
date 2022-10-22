@@ -16,9 +16,7 @@ Library    SeleniumLibrary
      Location Should Be    ${LOGIN_URL}
      Log In With Account
      sleep  2s
-     Go To Profile
-     Sleep    2s
-     Wait Until Element Is Visible    //img[@class='css-1wu7nrr']
+     Go To Homepage
 
 
 
