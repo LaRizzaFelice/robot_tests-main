@@ -8,6 +8,7 @@ Resource  badLoginRobot.robot
 ${ADD_CREDITS_BUTTON}=          xpath://div[@class='css-kcntxh']/button[@class='css-1e9674f']
 ${ADD_CREDITS_SPACE}=           xpath://form/input[@class='css-1ml9hd4']
 ${BUY_BUTTON}=                  xpath://form/button[@class='css-1e9674f']
+${CLOSE_RENTWINDOW_BUTTON}=     //*[@id="CloseModal"]
 
 
 *** Keywords ***
