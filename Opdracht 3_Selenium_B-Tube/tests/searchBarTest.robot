@@ -39,6 +39,7 @@ ${SELECT_SUGGESTION}=                        xpath:/html/body/div[2]/div/ul/li
     Sleep    2s
     Click Button  ${CLOSE_RENTWINDOW_BUTTON}
     Sleep    2s
+    Sleep    2s
 
 
     
