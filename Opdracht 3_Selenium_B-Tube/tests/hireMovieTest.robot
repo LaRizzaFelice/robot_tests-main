@@ -11,7 +11,7 @@ Library    SeleniumLibrary
 *** Variables ***
 ${GET_VALUE_CREDITS}=                           //*[@id="SignIn"]/div[3]/p[6]
 
-${SELECTED_MOVIE_2CHANGE_4_TEST}=               //div[@id='Action Movies']//img[@id='581392']
+${SELECTED_MOVIE_2CHANGE_4_TEST}=               //div[@id='Comedy Movies']//img[@id='682377']
 
 ${RENTBUTTON}=                                  //button[@id='RentMovieButton']
 ${CLOSE_RENTWINDOW_BUTTON}=                     //*[@id="CloseModal"]

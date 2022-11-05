@@ -9,10 +9,11 @@ Suite Teardown  Close browser
 Library    SeleniumLibrary
 
 *** Variables ***
-${SEARCHBAR_INPUT}=                          xpath:/html/body/div/div/div[2]/header/div[2]/div/div/div/div/input
+${SEARCHBAR_INPUT}=                          xpath://html/body/div/div/div[2]/header/div[2]/div/div/div/div/input
 ${DESIRED_MOVIE}=                            Fatman
 ${TRY_2_SEARCH_MOVIE}=                       Fat
 ${SELECT_SUGGESTION}=                        xpath:/html/body/div[2]/div/ul/li
+${GO_PROFILE}=                               //a[@href='#/profile']//button[@id='OrdersPageButton']
 
 *** Test Cases ***
 
@@ -21,7 +22,7 @@ ${SELECT_SUGGESTION}=                        xpath:/html/body/div[2]/div/ul/li
     Location Should Be    ${LOGIN_URL}
     Log In With Account
     sleep  5s
-    Wait Until Element Is Visible    ${GO_2_PROFILE}
+    Wait Until Element Is Visible    ${GO_PROFILE}
     Sleep    2s
     Input Text  ${SEARCHBAR_INPUT}    ${TRY_2_SEARCH_MOVIE}
     Sleep    5s
